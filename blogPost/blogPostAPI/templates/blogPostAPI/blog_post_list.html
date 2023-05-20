@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+
+    <script src ="https://cdn.tailwindcss.com"></script>
+    <title>Blog Post List</title>
+    
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h2 class="text-3xl font-bold mb-4">Blog Posts</h2>
+        {% for item in data %}
+        <div class="bg-white rounded-lg shadow-lg p-4 mb-4">
+            <h2 class="text-xl font-semibold mb-2">{{ item.title }}</h2>
+            <p><b>Author:</b> {{ item.author.username }}</p>
+            <p><b>Created at:</b> {{ item.created_at }}</p>
+            <p class="mt-2"><b>Content: </b>{{ item.content }}</p>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <a href="/blogpostlist/ {{item.id}}" class="text-white">
+                    View Details
+                </a>
+            </button>
+            
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
