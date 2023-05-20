@@ -35,10 +35,13 @@ You are building a simple blog application and you need to create a Django view 
 
     Use Django's built-in template tags and filters to format dates and display content safely
     
-# =====================================================================
 # Running instruction:
 1.Clone the porject and open with vscode
+
 2.Then change the directory to blogPost using command ```cd blogPost```
+
 3.Then run server by using ```python3 manage.py runserver```
+
 4.To add a new blog post open admin view on any browser at ```localhost:8000/admin```. The username and password is ```minhle```
+
 5.To view all blog post open the url on any browser at ```localhost:8000/blogpostlist```
