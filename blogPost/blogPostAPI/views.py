@@ -9,9 +9,9 @@ from rest_framework.views import APIView
 # Create your views here.
 
 
-class BlogPost(APIView):
+class BlogPostAPI(APIView):
     def get(self, request):
-        items = BlogPost.objects.select_related('user').all()
+        items = BlogPost.objects.select_related('author').all()
 
         serialized_item = BlogPostSerializer(items, many = True)
         return Response(serialized_item.data, status = status.HTTP_200_OK)
@@ -22,5 +22,4 @@ class BlogPost(APIView):
         serialized_item.is_valid(raise_exception= True)
         serialized_item.save()
         return Response(serialized_item.data, status=status.HTTP_200_OK)
-    
     

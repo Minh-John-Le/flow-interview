@@ -6,13 +6,13 @@ from.models import BlogPost
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        field = ['id', 'username']
+        fields = ['id', 'username', 'email']
 
 class BlogPostSerializer(serializers.ModelSerializer):
 
-    user = UserSerializer(read_only = True)
-    user_id = serializers.IntegerField(write_only = True)
+    author = UserSerializer(read_only = True)
+    author_id = serializers.IntegerField(write_only = True)
 
     class Meta:
         model = BlogPost
-        fields = ['id', 'title', 'user', 'create_at','user_id']
+        fields = ['id', 'title', 'created_at','author_id' , 'author', 'content']
