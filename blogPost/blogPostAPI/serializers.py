@@ -8,7 +8,7 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         field = ['id', 'username']
 
-class MenuItemSerializer(serializers.ModelSerializer):
+class BlogPostSerializer(serializers.ModelSerializer):
 
     user = UserSerializer(read_only = True)
     user_id = serializers.IntegerField(write_only = True)
